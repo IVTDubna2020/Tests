@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main()
+{
+    float a,b,c,angleA,angleB,angleC,S,sinA,sinB,sinC,P;
+    printf("введите сторону а, затем угол прилегющей к углу а,затем площадь s трегуольника\n");
+    scanf("%f%f%f",&a,&angleA,&S);
+    if (a>0&&angleA>0&&S>0)
+    {
+    angleA=angleA*M_PI/180;
+    sinA=sin(angleA);
+    b=(S*2)/(a*sinA);
+    c=sqrt(pow(a,2)+pow(b,2)+2*b*c*cos(angleA));
+    angleB=acos((pow(a,2)+pow(c,2)-pow(b,2))/(2*a*c))*180/M_PI;
+    angleC=acos((pow(c,2)+pow(b,2)-pow(a,2))/(2*c*b))*180/M_PI;
+    angleA=angleA*180/M_PI;
+    
+     printf("Сторона а:%f Сторона б:%f Сторона с:%f \nУгол а:%f  Угол б:%f  Угол  c:%f \nПлощадь:%f\n",a,b,c,angleA,angleB,angleC,S);
+    }
+    else
+    {
+    printf("Эти значения не могут быть отрицательными");
+    }
+ return 0;
+}
