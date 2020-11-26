@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float p,N,k=1,Ak,x,prog=1,num,Kx,sinKx;
+    printf("введите x\n");
+    scanf("%f",&x);
+    k=1;
+    Kx=k*x;
+    prog=1;
+    do
+    {
+        sinKx=sin(Kx);
+        Ak=sinKx/prog;
+        prog=prog+2;
+        N++;
+    }
+    while (Ak>0.01);
+    
+    do
+    {
+        p=sinKx/(2*k-1)/prog;
+        prog=+2;
+        num++;
+    }
+    while (num<=N);
+    
+    printf("P= %f\n",p);
+    
+    return 0;
+}
