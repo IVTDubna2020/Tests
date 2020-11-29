@@ -12,4 +12,4 @@ int main()
     C=2*R*sin(M_PI*c/180);
     printf("Cторона А=%f\nСторона С=%f\nУгол b=%.0f\nУгол c=%.0f\n",A,C,b,c);
     return 0;
-}
+} 
