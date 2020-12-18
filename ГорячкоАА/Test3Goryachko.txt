@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() 
+{
+double f, x, y;
+printf("Ниже представлена таблица решений функции F=((sin(2x)+cos(2x))/sin(x))*(x^2+y^2)\n при -1<=x<=1 с шагом 0.25 и 0<=y<=2 с шагом 0.1");
+for (x=-1; x<=1; x+=0.25){
+	if (x==0 || x== M_PI)
+	printf ("при х = %.3f функция не имеет решений",x);
+	else
+	for (y=0; y<=2; y+=0.1){
+		f=((sin(2*x)+cos(2*x))/sin(x))*(pow(x,2)+pow(y,2));
+			printf ("%.3f \t",f);
+}
+printf("\n");
+}
+	return 0;
+}
