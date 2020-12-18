@@ -8,19 +8,16 @@ int main()
 	for (x = -1; x <= 1; x += 0.2)
 	{
         for (y = -1; y <= 1; y += 0.1) 
-        if (check (x,y) == 0) printf ("Ф-ия не существует!\n"); 
-        else printf ("fx (%.1f, %.1f) = %.3f\n", x, y, fx(x,y));
-		printf ("\n");
+        	if (check (x,y) == 0) printf ("Ф-ия не существует!\n"); 
+        	else printf ("fx (%.1f, %.1f) = %.3f\n", x, y, fx(x,y));
+	printf ("\n");
 	}
 	return 0;
 }
 
 float fx(float x, float y)
-{
-    float Fxy, check;
-    check = pow(x,2) + pow (y,2) - x*y;
-	Fxy = (2*x+3*y-1)/(pow(x,2) + pow(y,2) - x*y); 
-	return Fxy;
+{ 
+	return (2*x+3*y-1)/(pow(x,2) + pow(y,2) - x*y); 
 }
 
 int check (float x, float y)
