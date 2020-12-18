@@ -6,9 +6,9 @@ int main()
 {
    for(float x=0; x<=2; x+=0.25)
     {        
+        
         for (float y=-0.5; y<=0.5;y+=0.1)
-	  if(
-	     printf("%.3f \n",Fr(x, y));
+         printf("%-10.3f",Fr(x, y));
         printf("\n");
     }
 }
