@@ -8,7 +8,8 @@ int main()
     {        
         
         for (float y=-0.5; y<=0.5;y+=0.1)
-         printf("%-10.3f",Fr(x, y));
+        if(((exp(x)+exp(x*-1))/(exp(y)-exp(y*-1)))==0||(asin((x+y)/2)*(180/M_PI))==0) printf(" nan ");
+        else printf("%-10.3f  ",Fr(x, y));
         printf("\n");
     }
 }
