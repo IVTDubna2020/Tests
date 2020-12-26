@@ -2,7 +2,7 @@
  
 main() 
 {
-    unsigned int a,b=0;
+    int b=0; float a;
     printf("Number:");
     scanf("%d%f",&a,&b);
     while (a!=0) {
