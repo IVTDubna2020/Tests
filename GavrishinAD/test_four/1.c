@@ -1,25 +1,57 @@
-#include <stdio.h>
-#include <math.h>
-float a(float, float, float);
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+#define SIZE 15
+
+void show(float [], int);
+void fill(float [], int);
+float change(float [], int);
 
 int main()
 {
-    float x, y, z;
-    do
-    {
-        printf("Введите Х: ");
-        scanf("%f", &x);
-        printf("Введите У: ");
-        scanf("%f", &y);
-        printf("Введите Z: ");
-        scanf("%f", &z);
-        if (z == 90) printf ("Неверные значения!\n\n");
-    } while (z == 90);
-    printf ("a = %f", a(x,y,z));
+    float A[SIZE];
+    printf("Исходный массив:\n");
+    fill(A, SIZE);
+    show(A, SIZE);
+    printf("Сумма отрицательных членов равна:%.3f\n\n",change(A, SIZE));
+    printf("Конечный массив:\n");
+    show(A, SIZE);
     return 0;
 }
 
-float a(float x, float y, float z)
+void show(float A[], int S)
 {
-	return (2 + exp(2))/(1 + pow(x,2) * fabs(y - tan(z*M_PI/180)));
+    for (int i = 0; i < S; i++)
+    {
+    printf("%-7.3f",A[i]);
+    if ((i+1)%3==0) printf("\n");
+    }
+    printf("\n");
+}
+
+void fill(float A[], int S)
+{
+    float r = 0;
+    srand(time(NULL));
+    for (int i = 0; i < S; i++)
+    {
+    r = rand()%9000;
+    A[i] = r/1000 + 1;
+    if(rand()%2 == 1) A[i]*=-1;
+    }
+}
+
+float change(float A[], int S)
+{
+    float sum = 0;
+    for (int i = 0; i < S; i++)
+    {
+        if(A[i]<0)
+        {
+            sum+=A[i];
+            A[i] = fabsf(A[i]);
+        }
+    }
+    return sum;
 }
