@@ -20,7 +20,7 @@ int main()
 
 int showArr(int a[], int b)
 {
-	for (int i = 0; i < b; i++) printf("%d\t", a[i]);
+	for (int i = 0; i < b; i++) printf("%d ", a[i]);
 	printf("\n");
 }
 
